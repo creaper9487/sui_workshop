@@ -108,3 +108,13 @@ fun init(otw: NFT_EXAMPLE, ctx: &mut TxContext) {
     transfer::public_transfer(publisher, ctx.sender());
     transfer::public_transfer(display, ctx.sender());
 }
+
+public fun function1(arg1: u64, arg2: bool) {
+    
+    let x: u64;
+    if (arg2) {
+        x = arg1 + 10;
+    } else {
+        x = arg1 + 20;
+    }
+}

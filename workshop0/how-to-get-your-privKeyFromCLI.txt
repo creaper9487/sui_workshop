@@ -1,0 +1,2 @@
+sui keytool list
+sui keytool export <SUI_ADDRESS>

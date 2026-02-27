@@ -20,20 +20,3 @@ fun init(witness: COIN_EXAMPLE, ctx: &mut TxContext) {
     transfer::public_freeze_object(coin_metadata);
     transfer::public_transfer(treasury_cap, ctx.sender());
 }
-
-public fun mint_coin<T>(
-    treasury_cap: &mut TreasuryCap<T>,
-    amount: u64,
-    ctx: &mut TxContext
-) {
-    let coin = coin::mint<T>(treasury_cap, amount, ctx);
-    transfer::public_transfer(coin, tx_context::sender(ctx));
-}
-
-public fun burn_coin<T>(
-    treasury_cap: &mut TreasuryCap<T>,
-    coin: Coin<T>,
-    ctx: &mut TxContext
-) {
-    coin::burn<T>(treasury_cap, coin);
-}
